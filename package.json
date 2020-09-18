@@ -12,7 +12,7 @@
     "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
     "pretest": "tsc -p tsconfig-test.json",
     "test": "mocha dist_test --recursive",
-    "prepublish": "npm run tsc && npm test"
+    "prepublish": "npm run build && npm test"
   },
   "author": "Max Klyukin",
   "license": "MIT",
