@@ -55,7 +55,7 @@ export class Timer<A> {
         return this.running;
     }
 
-    private getResult(): A|null {
+    public getResult(): A|null {
         return this.result;
     }
 

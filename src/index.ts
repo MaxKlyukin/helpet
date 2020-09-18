@@ -1,3 +1,4 @@
+import {it} from "./functional";
 import {Awaiter, forMilliseconds, forSeconds, TestAwaiter, tillTime} from "./Awaiter";
 import {Dating} from "./Dating";
 import {Enum, Enums} from "./Enums";
@@ -26,6 +27,8 @@ import {
 } from "./type/Tuple";
 
 export {
+    it,
+
     Awaiter, forMilliseconds, forSeconds, tillTime, TestAwaiter,
     Dating,
     Enum, Enums,

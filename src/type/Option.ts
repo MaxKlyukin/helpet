@@ -11,6 +11,7 @@ export interface Option<T> {
     readonly getOrNull: T;
     map<U>(mapper: (value: T) => U): Option<U>;
     filter(predicate: (value: T) => boolean): Option<T>;
+    forEach(op: (value: T) => void): void;
     readonly toList: List<T>;
 }
 
@@ -47,6 +48,12 @@ abstract class BaseOption<T> implements Option<T> {
             return this;
         } else {
             return None;
+        }
+    }
+
+    public forEach(op: (value: T) => void): void {
+        if (this.isDefined) {
+            op(this.get);
         }
     }
 
