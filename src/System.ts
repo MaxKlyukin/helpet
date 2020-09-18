@@ -8,5 +8,5 @@ export class System {
     public static readonly EOL = isWindows ? '\r\n' : '\n';
 
     // @ts-ignore
-    public static readonly isNode = (typeof process !== 'undefined') && (process.release.name === 'node');
+    public static readonly isNode = (typeof process !== 'undefined') && (typeof process.release !== 'undefined') && (process.release.name === 'node');
 }
