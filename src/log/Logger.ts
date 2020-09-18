@@ -129,11 +129,20 @@ class ConsoleLogger {
             ? this.formatError(context)
             : this.formatObject(context);
 
-        return formatted.split("\n").map(line => "  " + line).join("\n");
+        return formatted.split("\n").map(line => "  " + line).join(System.EOL);
     }
 
     private formatError(context: Error) {
-        return context.stack || context.toString();
+        if (!context.message) {
+            return context.toString();
+        }
+
+        let formatted = context.message;
+        if (context.stack) {
+            formatted += System.EOL + context.stack;
+        }
+
+        return formatted;
     }
 
     private formatObject(context: Object) {

@@ -1,9 +1,12 @@
-# Helpet
-
+# Helpet  
+  
 Small library with useful, easy to use functional types and other helpful things.  
-Contains helpful classes and corresponding helper functions.
+Contains helpful classes and corresponding helper functions.  
 
-### Classes
+Install:  
+`npm install --save helpet`  
+
+### Classes  
 
 #### `NumberRange`  
 Provides similar functionality to python's range function.  
@@ -42,10 +45,10 @@ async function sayHi() {
     console.log('Hello');
 }
 ```  
-When `sayHi` called it will print `Hello` after 5 second wait.    
+When `sayHi` called it will print `Hello` after 5 second wait.  
 
 #### `Logger`  
-Easy to use logger. Can work in node and browser environments. 
+Easy to use logger. Can work in node and browser environments.  
 
 Example:  
 ```typescript
@@ -64,6 +67,18 @@ class Foo {
         this.logger.error("An error ocurred.", error);
     } 
 }
+```  
+  
+#### `ErrorHandler`  
+Basic error handler. Will catch unhandled exceptions and rejected promises and will log them.  
+
+Example:  
+```typescript
+import { ErrorHandler } from 'helpet';
+
+ErrorHandler.register();
+
+// ErrorHandler.unregister();
 ```  
 
 #### `Timer`  
@@ -84,14 +99,14 @@ try {
     if (error instanceof HaltException) {
         console.log("Timer has been halted");
     } else if (error instanceof TimeOutException) {
-        console.log("Aciton coudn't finish before timer");
+        console.log("Aciton coudn't finish before the timer");
     } else {
         console.log("Action completed with an error");
     }
 }
 
 const isRunning = timer.isRunning();
-const completedBy = timer.getCompletedBy();//ACTION, EXCEPTION, TIMEOUT, HALT
+const completedBy = timer.getCompletedBy(); //ACTION, EXCEPTION, TIMEOUT, HALT
 const payload = timer.getResult();
 const userExceptions = timer.getException();
 timer.halt();
