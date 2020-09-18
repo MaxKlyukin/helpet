@@ -1,7 +1,11 @@
 {
   "name": "helpet",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Useful, easy to use functional types and other helpful things",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MaxKlyukin/helpet.git"
+  },
   "main": "dist/cjs/index.js",
   "types": "dist/cjs/index.d.ts",
   "module": "dist/esm/index.js",
