@@ -1,6 +1,6 @@
 {
   "name": "helpet",
-  "version": "1.0.0",
+  "version": "0.0.9",
   "description": "Useful, easy to use functional types and other helpful things",
   "main": "dist/cjs/index.js",
   "types": "dist/cjs/index.d.ts",
