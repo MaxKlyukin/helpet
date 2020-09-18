@@ -1,6 +1,6 @@
 "use strict";
 
-import {ConsoleWriter, ConsoleWriterFactory, WriterType} from "./ConsoleWritter";
+import {ConsoleWriter, ConsoleWriterFactory, ConsoleWriterType} from "./ConsoleWritter";
 import {Is} from "../Is";
 import {System} from "../System";
 
@@ -59,8 +59,8 @@ class ConsoleLogger {
     private readonly errorWriter: ConsoleWriter;
 
     constructor(public context: string) {
-        this.outWriter = ConsoleWriterFactory.get(WriterType.Out);
-        this.errorWriter = ConsoleWriterFactory.get(WriterType.Error);
+        this.outWriter = ConsoleWriterFactory.get(ConsoleWriterType.Out);
+        this.errorWriter = ConsoleWriterFactory.get(ConsoleWriterType.Error);
     }
 
     public log(level: LogLevel, message: string, ...context: Object[]) {

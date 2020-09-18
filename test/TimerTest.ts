@@ -1,7 +1,7 @@
 "use strict";
 
 import {expect, use as chaiUse} from "chai";
-import chaiAsPromised from "chai-as-promised";
+import * as chaiAsPromised from "chai-as-promised";
 import {Awaiter} from "../src/Awaiter";
 import {HaltException, NotReadyException, TimeOutException, Timer} from "../src/Timer";
 

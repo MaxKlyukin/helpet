@@ -52,14 +52,14 @@ class WebConsoleError extends WebConsole {
     }
 }
 
-export enum WriterType {Out, Error}
+export enum ConsoleWriterType {Out, Error}
 
 export class ConsoleWriterFactory {
-    public static get(type: WriterType) {
+    public static get(type: ConsoleWriterType) {
         switch (type) {
-            case WriterType.Out:
+            case ConsoleWriterType.Out:
                 return System.isNode ? new Stdout() : new WebConsoleLog();
-            case WriterType.Error:
+            case ConsoleWriterType.Error:
                 return System.isNode ? new Stderr() : new WebConsoleError();
         }
     }
