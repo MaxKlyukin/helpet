@@ -3,6 +3,8 @@
 Small library with useful, easy to use functional types and other helpful things.  
 Contains helpful classes and corresponding helper functions.  
   
+#### **Warning**: The library is not ready for production yet. Use it at your own risk.  
+  
 Install:  
 ```
 npm install --save helpet
