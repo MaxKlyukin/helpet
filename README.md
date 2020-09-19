@@ -1,10 +1,12 @@
-# Helpet  
+# helpet  
   
 Small library with useful, easy to use functional types and other helpful things.  
 Contains helpful classes and corresponding helper functions.  
-
+  
 Install:  
-`npm install --save helpet`  
+```
+npm install --save helpet
+```  
 
 ### Classes  
 
@@ -38,7 +40,7 @@ Helper functions: `forSeconds(amount: number)`, `forMilliseconds(amount: number)
 
 Example: 
 ```typescript
-import { range } from 'helpet';
+import { forSeconds } from 'helpet';
 
 async function sayHi() {
     await forSeconds(5);
