@@ -103,18 +103,19 @@ try {
     if (error instanceof HaltException) {
         console.log("Timer has been halted");
     } else if (error instanceof TimeOutException) {
-        console.log("Aciton coudn't finish before the timer");
+        console.log("Aciton didn't finish before the timer was up");
     } else {
         console.log("Action completed with an error");
     }
 }
 
 const isRunning = timer.isRunning();
-const completedBy = timer.getCompletedBy(); //ACTION, EXCEPTION, TIMEOUT, HALT
+const completedBy = timer.getCompletedBy(); // CompletedBy { ACTION, EXCEPTION, TIMEOUT, HALT }
 const payload = timer.getResult();
 const userExceptions = timer.getException();
-timer.halt();
+
 await timer.tillTimerCompletes();
+timer.halt();
 ```  
 
 ### Types 
@@ -132,7 +133,7 @@ const value = option(receivedValue);
 
 value.forEach(v => console.log(v));
 
-const result = value.map(v => v + 1).filter(v => v > 10).getOrElse(69);
+const result = value.map(v => v + 1).filter(v => v > 10).getOrElse(42);
 ```  
   
 #### `Either`  
@@ -181,6 +182,6 @@ const shuffledList = list.shuffled();
 const [positive, negative] = list.split(v => v >= 0);
 const sorted = people.sortedBy(person => person.name);
 const partOfList = list.drop(2).take(2);
-const allNumbers = list.flatMap(v => getNumbers(v));
+const allNumbers = list.flatMap(v => List.of(v * 2, v * 3, v * 4));
 ```  
 
